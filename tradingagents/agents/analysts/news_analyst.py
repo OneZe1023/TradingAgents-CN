@@ -185,6 +185,8 @@ def create_news_analyst(llm, toolkit):
         try:
             if hasattr(llm, 'model_name'):
                 model_info = f"{llm.__class__.__name__}:{llm.model_name}"
+            elif hasattr(llm, 'model'):
+                model_info = f"{llm.__class__.__name__}:{llm.model}"
             else:
                 model_info = llm.__class__.__name__
         except:
